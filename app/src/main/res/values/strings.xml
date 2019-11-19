@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">Sharity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="list">List</string>
+    <string name="map">Map</string>
+    <string name="find_center">Find a center nearby</string>
+    <string name="select_donations">Select everything you would like to donate</string>
+    <string-array name="donation_categories">
+        <item>Accessories</item>
+        <item>Arts</item>
+        <item>Books</item>
+        <item>Clothing</item>
+        <item>Furniture</item>
+        <item>Emergency</item>
+        <item>Household</item>
+        <item>Hygiene</item>
+    </string-array>
 </resources>

@@ -10,4 +10,5 @@
     <dimen name="bold_font_size">18sp</dimen>
     <dimen name="small_font_size">12sp</dimen>
     <dimen name="search_bar_height">44dp</dimen>
+    <dimen name="nav_bar_height">128dip</dimen>
 </resources>

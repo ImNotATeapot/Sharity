@@ -16,6 +16,6 @@ public class CategoriesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.choose_donations_categories, container, false);
+        return inflater.inflate(R.layout.donations_categories, container, false);
     }
 }
