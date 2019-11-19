@@ -16,7 +16,7 @@
             android:value="@string/google_maps_key"/>
 
         <activity
-            android:name=".find_center_activities.FindCenterActivity"
+            android:name=".choose_donations_activities.ChooseDonationsActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -25,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".choose_donations_activities.ChooseDonationsActivity"></activity>
+        <activity android:name=".find_center_activities.FindCenterActivity"></activity>
     </application>
 
 </manifest>
