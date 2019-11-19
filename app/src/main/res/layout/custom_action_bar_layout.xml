@@ -10,10 +10,10 @@
 
     <TableRow>
         <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/back_button_size"
+            android:layout_height="@dimen/back_button_size"
             android:scaleType="centerInside"
-            android:src="@drawable/back_arrow" />
+            android:background="@drawable/ic_back_arrow" />
 
         <TextView
             android:layout_width="wrap_content"
