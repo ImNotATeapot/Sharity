@@ -38,7 +38,7 @@
             android:layout_gravity="center_vertical"
             android:gravity="center"
             android:background="@android:color/transparent"
-            android:id="@+id/action_bar_back"
+            android:id="@+id/findListTab"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"/>
@@ -47,7 +47,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/map"
-            android:id="@+id/action_bar_forward"
+            android:id="@+id/findMapTab"
             android:layout_gravity="center_vertical"
             android:gravity="center"
             android:background="@android:color/transparent"

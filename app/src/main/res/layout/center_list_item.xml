@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageButton
-        android:id="@+id/list_center_imageview"
+        android:id="@+id/listCenterImageView"
         android:layout_width="@dimen/center_image_size"
         android:layout_height="@dimen/center_image_size"
         android:background="@drawable/common_google_signin_btn_icon_dark" />
@@ -18,7 +18,7 @@
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/list_name_textview"
+            android:id="@+id/listNameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
@@ -32,14 +32,14 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/pin_imageView"
+                android:id="@+id/pinImageView"
                 android:layout_width="@dimen/pin_width"
                 android:layout_height="@dimen/pin_height"
                 android:layout_margin="4dp"
                 app:srcCompat="@drawable/ic_pin" />
 
             <TextView
-                android:id="@+id/list_address_textview"
+                android:id="@+id/listAddressTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -49,7 +49,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/list_hours_textview"
+            android:id="@+id/listHoursTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
