@@ -14,4 +14,6 @@
         <item>Household</item>
         <item>Hygiene</item>
     </string-array>
+    <string name="cancel">Cancel</string>
+    <string name="popular">Trending on Sharity</string>
 </resources>

@@ -15,4 +15,5 @@
     <dimen name="push_button_width">80dp</dimen>
     <dimen name="pin_height">18dp</dimen>
     <dimen name="pin_width">24dp</dimen>
+    <dimen name="searchBar_width">320dp</dimen>
 </resources>
