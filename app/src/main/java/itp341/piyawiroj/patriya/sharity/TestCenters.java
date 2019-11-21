@@ -20,7 +20,7 @@ public class TestCenters {
         a.setAdminArea("CA");
         a.setPostalCode("90013");
         BusinessHour b = new BusinessHour();
-        String[] s = new String[];
+        String[] s = new String[2];
         DonationCenter c = new DonationCenter();
         c.setName("Downtown Women's Center");
         c.setAcceptedItems(s);
