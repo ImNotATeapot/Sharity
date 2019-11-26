@@ -6,6 +6,8 @@ import android.util.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
+// DonationCentersSingleton.get(this).getDonations()
+
 public class DonationCentersSingleton {
     private static DonationCentersSingleton singleton;
     private ArrayList<DonationCenter> centers;
@@ -23,6 +25,10 @@ public class DonationCentersSingleton {
             singleton = new DonationCentersSingleton(context);
         }
         return singleton;
+    }
+
+    public ArrayList<Pair> getDonations() {
+        return donations;
     }
 
     public void addCenter(DonationCenter center) {
