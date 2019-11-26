@@ -1,11 +1,13 @@
-package itp341.piyawiroj.patriya.sharity;
+package itp341.piyawiroj.patriya.sharity.models;
 
 import android.location.Address;
 
-import java.time.LocalDateTime;
 import java.util.Arrays;
 
 public class DonationCenter {
+
+    public static String EXTRA_POSITION = "Sharity_extra_donation_center_position";
+
     private String name;
     private Address address;
     private BusinessHour hours;
@@ -18,7 +20,6 @@ public class DonationCenter {
     private String website;
     private String instructions;
     private Address[] otherLocations;
-
 
     public DonationCenter() {
     }

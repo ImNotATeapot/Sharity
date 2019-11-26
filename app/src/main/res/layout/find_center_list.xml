@@ -8,6 +8,7 @@
     android:padding="8dp">
 
     <SearchView
+        android:id="@+id/center_search_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/search_bar_height"
         android:layout_margin="8dp"
@@ -23,15 +24,9 @@
         android:gravity="center"
         android:text="TextView" />
 
-    <ScrollView
+    <ListView
+        android:id="@+id/center_list"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 </LinearLayout>

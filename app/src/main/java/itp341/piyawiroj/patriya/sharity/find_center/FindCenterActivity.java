@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.find_center_activities;
+package itp341.piyawiroj.patriya.sharity.find_center;
 
 import android.os.Bundle;
 
@@ -15,6 +15,8 @@ import itp341.piyawiroj.patriya.sharity.R;
 
 public class FindCenterActivity extends AppCompatActivity {
 
+    private static final String TAG = FindCenterActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +26,6 @@ public class FindCenterActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-
     }
 
     private class CenterSectionsPagerAdapter extends FragmentPagerAdapter {

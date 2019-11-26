@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.choose_donations_activities;
+package itp341.piyawiroj.patriya.sharity.choose_donations;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

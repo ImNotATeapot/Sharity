@@ -5,7 +5,7 @@
     <dimen name="appbar_padding">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
-    <dimen name="back_button_size">56dp</dimen>
+    <dimen name="back_button_size">50dp</dimen>
     <dimen name="center_image_size">120dp</dimen>
     <dimen name="bold_font_size">18sp</dimen>
     <dimen name="small_font_size">12sp</dimen>
@@ -17,4 +17,5 @@
     <dimen name="pin_width">24dp</dimen>
     <dimen name="icon_size">24dp</dimen>
     <dimen name="searchBar_width">320dp</dimen>
+    <dimen name="table_spacing">4dp</dimen>
 </resources>

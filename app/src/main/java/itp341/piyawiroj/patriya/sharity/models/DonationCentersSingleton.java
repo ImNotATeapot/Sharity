@@ -1,10 +1,9 @@
-package itp341.piyawiroj.patriya.sharity;
+package itp341.piyawiroj.patriya.sharity.models;
 
 import android.content.Context;
 import android.util.Pair;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DonationCentersSingleton {
     private static DonationCentersSingleton singleton;
@@ -29,7 +28,14 @@ public class DonationCentersSingleton {
         centers.add(center);
     }
 
+    public ArrayList<DonationCenter> getCenters() {
+        return centers;
+    }
+
     private void setDonations() {
+        TestCenters t = new TestCenters();
+        centers = t.getCenters();
+
         donations = new ArrayList<>();
         //Clothing
         donations.add(new Pair("Underwear", "Clothing"));

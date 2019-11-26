@@ -1,16 +1,17 @@
-package itp341.piyawiroj.patriya.sharity;
+package itp341.piyawiroj.patriya.sharity.models;
 
 import android.location.Address;
 
-import java.sql.Time;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 public class TestCenters {
-    ArrayList<DonationCenter> centers;
+    public ArrayList<DonationCenter> centers;
+
+    public ArrayList<DonationCenter> getCenters() {
+        return centers;
+    }
+
     public TestCenters() {
         centers = new ArrayList<>();
         Address a = new Address(Locale.US);
@@ -34,5 +35,10 @@ public class TestCenters {
         c.setWebsite("downtownwomencenter.org");
         c.setInstructions("instructions");
         c.setOtherLocations(as);
+        c.setAddress(a);
+
+        centers.add(c);
+        centers.add(c);
+        centers.add(c);
     }
 }
