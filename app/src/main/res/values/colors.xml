@@ -3,8 +3,17 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#FFFFFF</color>
-    <color name="gradientStart">#DAF4D8</color>
-    <color name="gradientEnd">#F8F8F8</color>
+    <color name="gradientStart">#C1F4C4</color>
+    <color name="gradientEnd">#DAFBFF</color>
     <color name="lightGrey">#EBEBEB</color>
     <color name="white">#FFFFFF</color>
+    <color name="tabSelected">#26A4B4</color>
+    <color name="color1">#50AEAC47</color>
+    <color name="color2">#5092AB45</color>
+    <color name="color3">#506B925A</color>
+    <color name="color4">#50923D7E</color>
+    <color name="color5">#503D7392</color>
+    <color name="color6">#504C8292</color>
+    <color name="color7">#50773092</color>
+    <color name="color8">#503C3792</color>
 </resources>

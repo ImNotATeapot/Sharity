@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.find_center_activities;
+package itp341.piyawiroj.patriya.sharity.find_center;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
