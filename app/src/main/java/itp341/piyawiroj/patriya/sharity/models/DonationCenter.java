@@ -42,20 +42,6 @@ public class DonationCenter {
                 '}';
     }
 
-    public DonationCenter(String name, Address address, BusinessHour hours, String notice, String description, String[] acceptedItems, String[] notAcceptedItems, String phoneNumber, String email, String website, String instructions, Address[] otherLocations) {
-        this.name = name;
-        this.address = address;
-        this.hours = hours;
-        this.notice = notice;
-        this.description = description;
-        this.acceptedItems = acceptedItems;
-        this.notAcceptedItems = notAcceptedItems;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.website = website;
-        this.instructions = instructions;
-        this.otherLocations = otherLocations;
-    }
 
     public String getName() {
         return name;

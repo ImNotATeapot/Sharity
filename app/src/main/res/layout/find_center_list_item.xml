@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white">
 
     <ImageButton
         android:id="@+id/listCenterImageView"
         android:layout_width="@dimen/center_image_size"
         android:layout_height="@dimen/center_image_size"
-        android:background="@drawable/common_google_signin_btn_icon_dark" />
+        android:layout_margin="16dp"
+        android:background="@drawable/googleg_standard_color_18"
+        android:padding="16dp"
+        android:scaleType="fitCenter" />
 
     <LinearLayout
         android:id="@+id/center_item"

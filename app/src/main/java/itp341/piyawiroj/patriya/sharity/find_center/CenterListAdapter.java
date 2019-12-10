@@ -26,7 +26,7 @@ public class CenterListAdapter extends ArrayAdapter<DonationCenter> {
 
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.center_list_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.find_center_list_item, parent, false);
         }
         DonationCenter center = getItem(position);
         TextView listName = convertView.findViewById(R.id.listNameTextView);

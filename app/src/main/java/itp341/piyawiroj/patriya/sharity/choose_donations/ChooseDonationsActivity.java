@@ -1,9 +1,8 @@
 package itp341.piyawiroj.patriya.sharity.choose_donations;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
@@ -16,24 +15,31 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import itp341.piyawiroj.patriya.sharity.R;
-import itp341.piyawiroj.patriya.sharity.find_center.FindCenterActivity;
 
 public class ChooseDonationsActivity extends AppCompatActivity {
 
+    private static final String TAG = ChooseDonationsActivity.class.getSimpleName();
     public TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tabbed_activity);
-        getSupportActionBar().hide();
+        setContentView(R.layout.main_tabbed_activity);
         DonationSectionsPagerAdapter sectionsPagerAdapter = new DonationSectionsPagerAdapter(getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+        getSupportActionBar().hide();
         title = findViewById(R.id.title);
         title.setText("Donations");
+        ImageButton imageButton= (ImageButton)findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

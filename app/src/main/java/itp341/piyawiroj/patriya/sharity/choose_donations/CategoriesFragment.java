@@ -44,7 +44,7 @@ public class CategoriesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.donations_categories, container, false);
+        View view = inflater.inflate(R.layout.choose_donations_categories, container, false);
 
         //link table elements
         button1 = view.findViewById(R.id.push_button1);
@@ -67,11 +67,16 @@ public class CategoriesFragment extends Fragment {
         //group table elements
         Button[] buttons = {button1,button2,button3,button4,button5,button6,button7,button8};
         TextView[] textViews = {text1,text2,text3,text4,text5,text6,text7,text8};
+        String[] donationCategories = getResources().getStringArray(R.array.donation_categories);
+        int i=0;
         for(Button button:buttons){
-
+            button.getBackground().setLevel(i);
+            i++;
         }
+        i=0;
         for(TextView text:textViews) {
-
+            text.setText(donationCategories[i]);
+            i++;
         }
 
 

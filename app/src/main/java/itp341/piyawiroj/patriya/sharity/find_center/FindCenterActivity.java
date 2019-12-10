@@ -1,6 +1,9 @@
 package itp341.piyawiroj.patriya.sharity.find_center;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,16 +19,27 @@ import itp341.piyawiroj.patriya.sharity.R;
 public class FindCenterActivity extends AppCompatActivity {
 
     private static final String TAG = FindCenterActivity.class.getSimpleName();
+    public TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tabbed_activity);
+        setContentView(R.layout.main_tabbed_activity);
         CenterSectionsPagerAdapter sectionsPagerAdapter = new CenterSectionsPagerAdapter(getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+        getSupportActionBar().hide();
+        title = findViewById(R.id.title);
+        title.setText("Find a center nearby");
+        ImageButton imageButton= (ImageButton)findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private class CenterSectionsPagerAdapter extends FragmentPagerAdapter {
