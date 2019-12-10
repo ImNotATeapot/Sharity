@@ -29,6 +29,7 @@ public class CategoriesFragment extends Fragment {
     public Button button7;
     public Button button8;
 
+
     public TextView text1;
     public TextView text2;
     public TextView text3;
