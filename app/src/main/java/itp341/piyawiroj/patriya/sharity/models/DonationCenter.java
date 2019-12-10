@@ -20,6 +20,7 @@ public class DonationCenter {
     private String website;
     private String instructions;
     private Address[] otherLocations;
+    private String acceptedItemsDetails;
 
     public DonationCenter() {
     }
@@ -151,5 +152,13 @@ public class DonationCenter {
 
     public void setOtherLocations(Address[] otherLocations) {
         this.otherLocations = otherLocations;
+    }
+
+    public String getAcceptedItemsDetails() {
+        return acceptedItemsDetails;
+    }
+
+    public void setAcceptedItemsDetails(String acceptedItemsDetails) {
+        this.acceptedItemsDetails = acceptedItemsDetails;
     }
 }

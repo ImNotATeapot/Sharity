@@ -29,6 +29,7 @@ public class CategoriesFragment extends Fragment {
     public Button button7;
     public Button button8;
 
+
     public TextView text1;
     public TextView text2;
     public TextView text3;
@@ -67,8 +68,10 @@ public class CategoriesFragment extends Fragment {
         //group table elements
         Button[] buttons = {button1,button2,button3,button4,button5,button6,button7,button8};
         TextView[] textViews = {text1,text2,text3,text4,text5,text6,text7,text8};
+        int i=0;
         for(Button button:buttons){
-
+            button.getBackground().setLevel(i);
+            i++;
         }
         for(TextView text:textViews) {
 

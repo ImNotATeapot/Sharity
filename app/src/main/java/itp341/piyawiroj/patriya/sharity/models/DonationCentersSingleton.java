@@ -34,6 +34,8 @@ public class DonationCentersSingleton {
         centers.add(center);
     }
 
+    public DonationCenter getCenter(int position) { return centers.get(position);}
+
     public ArrayList<DonationCenter> getCenters() {
         return centers;
     }
