@@ -34,7 +34,7 @@ public class CenterDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.center_detail_view);
+        setContentView(R.layout.find_center_detail_view);
 
         //link elements
         nameTextView = findViewById(R.id.detail_name_textView);
