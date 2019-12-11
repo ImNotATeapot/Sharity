@@ -2,16 +2,21 @@ package itp341.piyawiroj.patriya.sharity.main;
 
 import android.content.Context;
 import android.location.Address;
+import android.net.Uri;
 import android.renderscript.Sampler;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Iterator;
 import java.util.Locale;
@@ -21,11 +26,12 @@ import itp341.piyawiroj.patriya.sharity.models.DonationCenter;
 import itp341.piyawiroj.patriya.sharity.models.DonationCentersSingleton;
 
 public class Utility {
+    private static final String TAG = Utility.class.getSimpleName();
     private Context context;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference dbRef = database.getReference();
 
-    Utility(Context context) {
+    public Utility(Context context) {
         this.context = context;
     }
 
@@ -83,7 +89,13 @@ public class Utility {
         c.setInstructions(snapshot.child("instructions").getValue().toString());
         c.setAddress(addr);
         c.setAcceptedItemsDetails(snapshot.child("acceptedItemDetails").getValue().toString());
-
+        c.setImageUrl(snapshot.child("imageid").getValue().toString());
         return c;
+    }
+
+    public void getURi(String url, OnSuccessListener<Uri> listener) {
+        //Log.d(TAG, "URL IS" + url);
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference().child(url);
+        storageRef.getDownloadUrl().addOnSuccessListener(listener);
     }
 }
