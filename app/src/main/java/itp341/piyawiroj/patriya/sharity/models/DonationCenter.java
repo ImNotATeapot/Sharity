@@ -24,6 +24,16 @@ public class DonationCenter {
     private String instructions;
     private Address[] otherLocations;
     private String acceptedItemsDetails;
+    private String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 
     public DonationCenter() {
     }
