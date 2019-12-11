@@ -28,49 +28,48 @@ import java.net.URI;
 
 import itp341.piyawiroj.patriya.sharity.R;
 
-public class SearchFragment extends Fragment {
+public class SearchFragment extends Fragment implements OnSuccessListener<Uri>, ValueEventListener {
 
     private static final String TAG = SearchFragment.class.getSimpleName();
-
+    private static String imglnk ;
     @Nullable
     ImageView a;
-    DatabaseReference reff;
+    DatabaseReference d0;
+    DatabaseReference d1;
+    DatabaseReference d2;
     StorageReference storageRef;
+    String imgurl;
+
+    @Override
+    public void onSuccess(Uri uri) {
+        imgurl = uri.toString();
+        Log.d(TAG, "FOUND URL" + imgurl);
+        Glide.with(getContext()).load(imgurl).into(a);
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.choose_donations_search, container, false);
-        reff = FirebaseDatabase.getInstance().getReference().child("0").child("imageid");
-        storageRef  = FirebaseStorage.getInstance().getReference().child("DMC.jpeg");
-
-//        final StorageReference pathReference = storageRef.child("DWC.jpeg");
-//        storageRef.child("DWC.jpeg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//            @Override
-//            public void onSuccess(Uri uri) {
-//                // Got the download URL for 'users/me/profile.png'
-//                Glide.with(getActivity()).load(pathReference).into(a);
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception exception) {
-//                // Handle any errors
-//            }
-//        });
-//
-//        reff.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                String name = dataSnapshot.getValue().toString();
-//                //String location = dataSnapshot.child("Location").getValue().toString();
-//                //String print = name+location;
-//                Glide.with(getActivity()).load(storageRef).into(a);
-//                //a.setText(print);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-        //a = v.findViewById(R.id.testTextView);
+        a = v.findViewById(R.id.testTextView);
+        d0 = FirebaseDatabase.getInstance().getReference().child("0");
+        d1 = FirebaseDatabase.getInstance().getReference().child("1");
+        d2 = FirebaseDatabase.getInstance().getReference().child("2");
+        d0.addValueEventListener(this);
+        d1.addValueEventListener(this);
+        d2.addValueEventListener(this);
         return v;
+    }
+
+    @Override
+    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        imglnk = dataSnapshot.child("imageid").getValue().toString();
+        Log.d(TAG,"imglnk is: "+imglnk);
+        storageRef = FirebaseStorage.getInstance().getReference().child(imglnk);
+        storageRef.getDownloadUrl().addOnSuccessListener(this);
+
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+
     }
 }
