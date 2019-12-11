@@ -1,11 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
 
-    <Button
-        android:id="@+id/button2"
+
+    <View
+        android:id="@+id/mapImageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/map_image"
+        app:layout_constraintBottom_toTopOf="@id/guidelineView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="0.3" />
+
+    <View
+        android:id="@+id/guidelineView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mapImageView"
+        app:layout_constraintVertical_weight="0.7" />
+
+    <View
+        android:id="@+id/gradientLayerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_opaque_background"
+        app:layout_constraintBottom_toTopOf="@id/guidelineView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="0.7" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
-</LinearLayout>
+        android:orientation="vertical"
+        android:padding="14pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mapImageView">
+
+        <TextView
+            android:id="@+id/findNearbyTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Find a Center Nearby'"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/useCurrentLocationButton"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/square_border"
+            android:text="USE CURRENT LOCATION" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="- OR -" />
+
+        <SearchView
+            android:id="@+id/locationSearchView"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/square_border"
+            android:padding="2dp" />
+
+        <Button
+            android:id="@+id/findCentersButton"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/square_border"
+            android:text="FIND CENTER"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

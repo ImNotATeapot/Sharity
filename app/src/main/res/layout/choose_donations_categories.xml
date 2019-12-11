@@ -223,7 +223,7 @@
         android:layout_height="56dp"
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#8264D1C2"
+        android:backgroundTint="@color/buttonGreen"
         android:elevation="4dp"
         android:text="@string/next" />
 </LinearLayout>

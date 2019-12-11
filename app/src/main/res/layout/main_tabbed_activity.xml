@@ -7,7 +7,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient_background"
+        android:background="@drawable/gradient_tab_background"
         android:padding="4dp"
         android:theme="@style/AppTheme.NoActionBar">
 
@@ -46,9 +46,9 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-8pt"
             app:tabIndicatorColor="@color/tabSelected"
-            app:tabSelectedTextColor="@color/tabSelected"
-            android:layout_marginTop="-8dp"/>
+            app:tabSelectedTextColor="@color/tabSelected" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager

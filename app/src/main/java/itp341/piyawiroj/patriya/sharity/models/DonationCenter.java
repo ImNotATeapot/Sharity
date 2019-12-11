@@ -7,6 +7,9 @@ import java.util.Arrays;
 public class DonationCenter {
 
     public static String EXTRA_POSITION = "Sharity_extra_donation_center_position";
+    public static String EXTRA_LOCATION = "Sharity_extra_donation_center_location";
+    public static String EXTRA_LATITUDE = "Sharity_extra_donation_center_latitude";
+    public static String EXTRA_LONGITUDE = "Sharity_extra_donation_center_longitude";
 
     private String name;
     private Address address;
