@@ -59,11 +59,7 @@ public class MapFragment extends Fragment {
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
 
-//                //request permissions
-//                String[] permissionsList = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
-//                requestPermissions(permissionsList, REQUEST_CODE);
-//                // For showing a move to my location button
-//                googleMap.setMyLocationEnabled(true);
+                List<DonationCenter> centers = DonationCentersSingleton.get(getContext()).getCenters();
 
                 //test location
                 Address a = new Address(Locale.US);

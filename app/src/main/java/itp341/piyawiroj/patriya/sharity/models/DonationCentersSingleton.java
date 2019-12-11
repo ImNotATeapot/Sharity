@@ -41,8 +41,6 @@ public class DonationCentersSingleton {
     }
 
     private void setDonations() {
-        TestCenters t = new TestCenters();
-        centers = t.getCenters();
 
         donations = new ArrayList<>();
         //Clothing
