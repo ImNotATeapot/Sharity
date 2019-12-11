@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1063533713618",
+    "firebase_url": "https://sharity-2e523.firebaseio.com",
+    "project_id": "sharity-2e523",
+    "storage_bucket": "sharity-2e523.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063533713618:android:e418d5e5e252b4c720750b",
+        "android_client_info": {
+          "package_name": "itp341.piyawiroj.patriya.sharity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1063533713618-kjb0sjaqsovgaohe5pb56hlfdbr61td4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "itp341.piyawiroj.patriya.sharity",
+            "certificate_hash": "14164c95140700d257d5d636579b38fc870fe36d"
+          }
+        },
+        {
+          "client_id": "1063533713618-gjnjo8sf9s37aed93j3eshhogbl9sko0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdbCDs-WLugjrbOHREn69AK8uLrQqW_M0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1063533713618-gjnjo8sf9s37aed93j3eshhogbl9sko0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
