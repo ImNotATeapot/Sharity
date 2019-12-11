@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
 import java.net.URI;
 
 import itp341.piyawiroj.patriya.sharity.R;
@@ -31,6 +32,8 @@ public class SearchFragment extends Fragment implements OnSuccessListener<Uri>, 
 
     private static final String TAG = SearchFragment.class.getSimpleName();
     private static String imglnk ;
+
+
     @Nullable
     ImageView a;
     DatabaseReference d0;

@@ -39,6 +39,7 @@ public class CategoriesFragment extends Fragment {
     public TextView text7;
     public TextView text8;
 
+    private String[] categories;
 
 
     @Nullable
@@ -66,17 +67,23 @@ public class CategoriesFragment extends Fragment {
         text8 = view.findViewById(R.id.push_text8);
 
         //group table elements
+        categories = getResources().getStringArray(R.array.donation_categories);
         Button[] buttons = {button1,button2,button3,button4,button5,button6,button7,button8};
         TextView[] textViews = {text1,text2,text3,text4,text5,text6,text7,text8};
-        String[] donationCategories = getResources().getStringArray(R.array.donation_categories);
         int i=0;
         for(Button button:buttons){
             button.getBackground().setLevel(i);
-            i++;
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int level = v.getBackground().getLevel();
+                    v.getBackground().setLevel((level+8)%16);
+                }
+            });
         }
         i=0;
         for(TextView text:textViews) {
-            text.setText(donationCategories[i]);
+            text.setText(categories[i]);
             i++;
         }
 

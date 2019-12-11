@@ -1,12 +1,12 @@
 package itp341.piyawiroj.patriya.sharity.main;
 
-import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utility u = new Utility(getApplicationContext());
+        u.getAll();
         setContentView(R.layout.main_activity);
         searchView = findViewById(R.id.locationSearchView);
         searchView.setQueryHint("Enter a zip code");
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 // check for permissions
                 if ( ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
                     //request permissions
-                    String[] permissionsList = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
+                    String[] permissionsList = new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION};
                     requestPermissions(permissionsList, 0);
                 } else {
                     Intent i = new Intent(getApplicationContext(), ChooseDonationsActivity.class);
@@ -73,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), ChooseDonationsActivity.class);
                 i.putExtra(DonationCenter.EXTRA_LOCATION, zip);
                 startActivity(i);
+
+//                if ( ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACTION_DIAL) != PackageManager.PERMISSION_GRANTED ) {
+//                    String dial = "tel:" + "7742903400";
+//                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
+//                }
             }
         });
     }
