@@ -32,6 +32,8 @@ public class SearchFragment extends Fragment implements OnSuccessListener<Uri>, 
 
     private static final String TAG = SearchFragment.class.getSimpleName();
     private static String imglnk ;
+
+
     @Nullable
     ImageView a;
     DatabaseReference d0;

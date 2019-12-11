@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utility u = new Utility(getApplicationContext());
+        u.getAll();
         setContentView(R.layout.main_activity);
         searchView = findViewById(R.id.locationSearchView);
         searchView.setQueryHint("Enter a zip code");
