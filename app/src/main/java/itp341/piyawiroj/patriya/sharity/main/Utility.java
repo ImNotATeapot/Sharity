@@ -90,6 +90,7 @@ public class Utility {
         c.setAddress(addr);
         c.setAcceptedItemsDetails(snapshot.child("acceptedItemDetails").getValue().toString());
         c.setImageUrl(snapshot.child("imageid").getValue().toString());
+        //c.setPhoneNumber(snapshot.child("phoneNumber").getValue().toString());
         return c;
     }
 
