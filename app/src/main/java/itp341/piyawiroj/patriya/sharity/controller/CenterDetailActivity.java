@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -75,7 +77,9 @@ public class CenterDetailActivity extends AppCompatActivity implements OnSuccess
         locationTextView.setText(addressText);
         descriptionTextView.setText(center.getDescription());
         notesTextView.setText(center.getNotice());
-        phoneTextView.setText(center.getPhoneNumber());
+        SpannableString content = new SpannableString(center.getPhoneNumber());
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        phoneTextView.setText(content);
         number = center.getPhoneNumber();
         mailTextView.setText(center.getEmail());
         websiteTextView.setText(center.getWebsite());
@@ -91,7 +95,8 @@ public class CenterDetailActivity extends AppCompatActivity implements OnSuccess
 
     @Override
     public void onClick(View v) {
-        if ( ContextCompat.checkSelfPermission( getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+        if ( ContextCompat.checkSelfPermission( getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+        } else {
             String dial = "tel:" + number;
             startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
         }
