@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.choose_donations;
+package itp341.piyawiroj.patriya.sharity.controller;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +22,8 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import itp341.piyawiroj.patriya.sharity.R;
+import itp341.piyawiroj.patriya.sharity.view.CategoriesFragment;
+import itp341.piyawiroj.patriya.sharity.view.SearchFragment;
 
 public class ChooseDonationsActivity extends AppCompatActivity {
 

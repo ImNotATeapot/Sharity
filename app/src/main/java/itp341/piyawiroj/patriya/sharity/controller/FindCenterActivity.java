@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.find_center;
+package itp341.piyawiroj.patriya.sharity.controller;
 
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +15,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 import itp341.piyawiroj.patriya.sharity.R;
+import itp341.piyawiroj.patriya.sharity.view.ListFragment;
+import itp341.piyawiroj.patriya.sharity.view.MapFragment;
 
 public class FindCenterActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.center_details;
+package itp341.piyawiroj.patriya.sharity.controller;
 
 import android.location.Address;
 import android.net.Uri;
@@ -9,22 +9,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import io.grpc.Context;
 import itp341.piyawiroj.patriya.sharity.R;
-import itp341.piyawiroj.patriya.sharity.main.Utility;
+import itp341.piyawiroj.patriya.sharity.util.FirebaseUtility;
 import itp341.piyawiroj.patriya.sharity.models.DonationCenter;
 import itp341.piyawiroj.patriya.sharity.models.DonationCentersSingleton;
 
-import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.util.Util;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CenterDetailActivity extends AppCompatActivity implements OnSuccessListener<Uri> {
 
@@ -82,7 +73,7 @@ public class CenterDetailActivity extends AppCompatActivity implements OnSuccess
         websiteTextView.setText(center.getWebsite());
         acceptedItemsTextView.setText(center.getAcceptedItemsDetails());
 
-        Utility u = new Utility(getApplicationContext());
+        FirebaseUtility u = new FirebaseUtility(getApplicationContext());
         u.getURi(center.getImageUrl(), this);
     }
 

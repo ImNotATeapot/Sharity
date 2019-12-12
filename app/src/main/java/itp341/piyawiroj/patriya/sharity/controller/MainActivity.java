@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.main;
+package itp341.piyawiroj.patriya.sharity.controller;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,7 +7,6 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,13 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import java.util.List;
-import java.util.Locale;
+
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
 
 import itp341.piyawiroj.patriya.sharity.R;
-import itp341.piyawiroj.patriya.sharity.choose_donations.ChooseDonationsActivity;
+import itp341.piyawiroj.patriya.sharity.util.FirebaseUtility;
 import itp341.piyawiroj.patriya.sharity.models.DonationCenter;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Utility u = new Utility(getApplicationContext());
+        FirebaseUtility u = new FirebaseUtility(getApplicationContext());
         u.getAll();
 
         setContentView(R.layout.main_activity);

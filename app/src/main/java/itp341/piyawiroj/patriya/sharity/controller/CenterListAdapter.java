@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.find_center;
+package itp341.piyawiroj.patriya.sharity.controller;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import itp341.piyawiroj.patriya.sharity.center_details.CenterDetailActivity;
 import itp341.piyawiroj.patriya.sharity.models.DonationCenter;
 import itp341.piyawiroj.patriya.sharity.R;
 

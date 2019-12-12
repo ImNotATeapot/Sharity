@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.find_center;
+package itp341.piyawiroj.patriya.sharity.view;
 
 import android.Manifest;
 import android.location.Address;
@@ -73,7 +73,7 @@ public class MapFragment extends Fragment {
                     googleMap.addMarker(marker);
                     // For zooming automatically to the location of the marker
                     if (latLng != null) {
-                        CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(30).build();
+                        CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(60).build();
                         googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                     }
                 }
