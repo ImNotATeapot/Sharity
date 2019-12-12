@@ -1,6 +1,7 @@
 package itp341.piyawiroj.patriya.sharity.main;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -17,6 +18,9 @@ import androidx.core.content.ContextCompat;
 
 import java.util.List;
 import java.util.Locale;
+import android.widget.TextView;
+
+import com.google.android.gms.maps.model.LatLng;
 
 import itp341.piyawiroj.patriya.sharity.R;
 import itp341.piyawiroj.patriya.sharity.choose_donations.ChooseDonationsActivity;
@@ -24,16 +28,21 @@ import itp341.piyawiroj.patriya.sharity.models.DonationCenter;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
+    public static final String LOCATION_PREFERENCE = "piyawiroj.patriya.Sharity.preference.accessed";
+    public static final String SHARED_PREFERENCES_ID = "piyawiroj.patriya.Sharity.shared.preferences";
 
     private Button useCurrentLocationButton;
     private Button findCentersNearMeButton;
     private SearchView searchView;
+    private TextView locationTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Utility u = new Utility(getApplicationContext());
         u.getAll();
+
         setContentView(R.layout.main_activity);
         searchView = findViewById(R.id.locationSearchView);
         searchView.setQueryHint("Enter a zip code");
@@ -61,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
                     i.putExtra(DonationCenter.EXTRA_LATITUDE, latitude);
                     i.putExtra(DonationCenter.EXTRA_LONGITUDE, longitude);
                     i.putExtra(DonationCenter.EXTRA_LOCATION, "none");
+
+                    //save zip code
+                    String zip = getZipFromLocation(latitude, longitude);
+                    SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_ID, MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(MainActivity.LOCATION_PREFERENCE, zip);
+                    editor.commit();
+
                     startActivity(i);
                 }
 
@@ -74,6 +91,13 @@ public class MainActivity extends AppCompatActivity {
                 String zip = searchView.getQuery().toString();
                 Intent i = new Intent(getApplicationContext(), ChooseDonationsActivity.class);
                 i.putExtra(DonationCenter.EXTRA_LOCATION, zip);
+
+                //save zip code
+                SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_ID, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(MainActivity.LOCATION_PREFERENCE, zip);
+                editor.commit();
+
                 startActivity(i);
 
 //                if ( ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACTION_DIAL) != PackageManager.PERMISSION_GRANTED ) {
@@ -82,5 +106,48 @@ public class MainActivity extends AppCompatActivity {
 //                }
             }
         });
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_ID, MODE_PRIVATE);
+        String accessed = sharedPreferences.getString(LOCATION_PREFERENCE, "");
+        locationTextView = findViewById(R.id.savedLocationTextView);
+        if (accessed != "") {
+            locationTextView.setText(String.format(getString(R.string.useExistingLocation),accessed));
+            locationTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_ID, MODE_PRIVATE);
+                    String zip = sharedPreferences.getString(LOCATION_PREFERENCE, "");
+                    Intent i = new Intent(getApplicationContext(), ChooseDonationsActivity.class);
+                    i.putExtra(DonationCenter.EXTRA_LOCATION, zip);
+                    startActivity(i);
+
+                }
+            });
+        } else {
+            locationTextView.setText("");
+        }
+    }
+
+    public String getZipFromLocation(double lat, double lng) {
+
+        Geocoder coder= new Geocoder(getApplicationContext());
+        List<Address> address;
+        LatLng p1 = null;
+
+        try
+        {
+            address = coder.getFromLocation(lat, lng, 1);
+            if(address==null)
+            {
+                return null;
+            }
+            Address location = address.get(0);
+            return location.getPostalCode();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

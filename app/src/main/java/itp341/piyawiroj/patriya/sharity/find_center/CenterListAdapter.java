@@ -36,13 +36,14 @@ public class CenterListAdapter extends ArrayAdapter<DonationCenter> {
         }
         currentPosition = position;
         DonationCenter center = getItem(position);
-
+        Log.d(TAG, String.format("Adding %s at position %d", center.getName(), position));
         TextView listName = convertView.findViewById(R.id.listNameTextView);
         TextView addressTextView = convertView.findViewById(R.id.listAddressTextView);
         TextView hoursTextView = convertView.findViewById(R.id.listHoursTextView);
         ImageView imageTextView = convertView.findViewById(R.id.listCenterImageView);
 
         listName.setText(center.getName());
+        convertView.setTag(position);
 
         Address address = center.getAddress();
         String addressText = String.format("%s, %s, %s, %s",
@@ -53,19 +54,21 @@ public class CenterListAdapter extends ArrayAdapter<DonationCenter> {
         addressTextView.setText(addressText);
 
         LinearLayout layout = convertView.findViewById(R.id.center_item);
-        layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent centerDetailIntent = new Intent(getContext(), CenterDetailActivity.class);
-                centerDetailIntent.putExtra(DonationCenter.EXTRA_POSITION, currentPosition);
-                getContext().startActivity(centerDetailIntent);
-            }
-        });
-
-        //TODO: implement hours
-        //TODO: implement image
+        layout.setOnClickListener(new ButtonListener());
+        layout.setTag(position);
+        imageTextView.setOnClickListener(new  ButtonListener());
+        imageTextView.setTag(position);
 
         return convertView;
+    }
+
+    private class ButtonListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Intent detailActivityIntent = new Intent(getContext(), CenterDetailActivity.class);
+            detailActivityIntent.putExtra(DonationCenter.EXTRA_POSITION, (Integer) v.getTag());
+            getContext().startActivity(detailActivityIntent);
+        }
     }
 
 }

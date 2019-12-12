@@ -38,7 +38,7 @@ public class MapFragment extends Fragment {
     private GoogleMap googleMap;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // inflat and return the layout
         View v = inflater.inflate(R.layout.find_center_map, container,
@@ -61,27 +61,22 @@ public class MapFragment extends Fragment {
 
                 List<DonationCenter> centers = DonationCentersSingleton.get(getContext()).getCenters();
 
-                //test location
-                Address a = new Address(Locale.US);
-                a.setAddressLine(0,"442 S. Pedro Street");
-                a.setSubAdminArea("Los Angeles");
-                a.setAdminArea("CA");
-                a.setPostalCode("90013");
-                String addressString = String.format("%s, %s, %s %s, United States", a.getAddressLine(0),
-                        a.getSubAdminArea(),
-                        a.getAdminArea(),
-                        a.getPostalCode());
-                LatLng latLng = getLocationFromAddress(addressString);
+                for (DonationCenter center : centers) {
+                    Address a = center.getAddress();
+                    String addressString = String.format("%s, %s, %s %s, United States", a.getAddressLine(0),
+                            a.getSubAdminArea(),
+                            a.getAdminArea(),
+                            a.getPostalCode());
+                    LatLng latLng = getLocationFromAddress(addressString);
 
-
-                // For dropping a marker at a point on the Map
-                LatLng sydney = new LatLng(34.0224, -118.2851);
-                googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
-                googleMap.addMarker(new MarkerOptions().position(latLng).title("Women's Center").snippet("Marker Description"));
-
-                // For zooming automatically to the location of the marker
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(30).build();
-                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                    MarkerOptions marker = new MarkerOptions().position(latLng).title(center.getName()).snippet(addressString);
+                    googleMap.addMarker(marker);
+                    // For zooming automatically to the location of the marker
+                    if (latLng != null) {
+                        CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(30).build();
+                        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                    }
+                }
             }
         });
 

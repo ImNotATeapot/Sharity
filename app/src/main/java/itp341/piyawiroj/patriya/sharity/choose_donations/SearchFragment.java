@@ -51,13 +51,13 @@ public class SearchFragment extends Fragment implements OnSuccessListener<Uri>, 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.choose_donations_search, container, false);
-        a = v.findViewById(R.id.testTextView);
-        d0 = FirebaseDatabase.getInstance().getReference().child("0");
-        d1 = FirebaseDatabase.getInstance().getReference().child("1");
-        d2 = FirebaseDatabase.getInstance().getReference().child("2");
-        d0.addValueEventListener(this);
-        d1.addValueEventListener(this);
-        d2.addValueEventListener(this);
+//        a = v.findViewById(R.id.testTextView);
+//        d0 = FirebaseDatabase.getInstance().getReference().child("0");
+//        d1 = FirebaseDatabase.getInstance().getReference().child("1");
+//        d2 = FirebaseDatabase.getInstance().getReference().child("2");
+//        d0.addValueEventListener(this);
+//        d1.addValueEventListener(this);
+//        d2.addValueEventListener(this);
         return v;
     }
 

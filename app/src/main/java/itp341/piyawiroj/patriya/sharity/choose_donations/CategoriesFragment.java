@@ -80,6 +80,7 @@ public class CategoriesFragment extends Fragment {
                     v.getBackground().setLevel((level+8)%16);
                 }
             });
+            i++;
         }
         i=0;
         for(TextView text:textViews) {

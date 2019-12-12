@@ -66,6 +66,7 @@ public class CenterDetailActivity extends AppCompatActivity implements OnSuccess
         //set elements
         int position = getIntent().getIntExtra(DonationCenter.EXTRA_POSITION,-1);
         DonationCenter center = DonationCentersSingleton.get(getApplicationContext()).getCenter(position);
+        Log.d(TAG, "Showing center at location" + position);
         nameTextView.setText(center.getName());
         Address address = center.getAddress();
         String addressText = String.format("%s, %s, %s, %s",
