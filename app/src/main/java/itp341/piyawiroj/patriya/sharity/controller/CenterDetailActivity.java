@@ -52,7 +52,7 @@ public class CenterDetailActivity extends AppCompatActivity implements OnSuccess
         hoursTextView = findViewById(R.id.detail_hours_textview);
         descriptionTextView = findViewById(R.id.description_textview);
         notesTextView = findViewById(R.id.notes_textview);
-        phoneTextView = findViewById(R.id.phone_textview);
+        phoneTextView = findViewById(R.id.phoneno_textview);
         mailTextView = findViewById(R.id.mail_textview);
         websiteTextView = findViewById(R.id.website_textview);
         statusTextView = findViewById(R.id.open_status_textView);
@@ -64,6 +64,7 @@ public class CenterDetailActivity extends AppCompatActivity implements OnSuccess
         int position = getIntent().getIntExtra(DonationCenter.EXTRA_POSITION,-1);
         DonationCenter center = DonationCentersSingleton.get(getApplicationContext()).getCenter(position);
         Log.d(TAG, "Showing center at location" + position);
+
         nameTextView.setText(center.getName());
         Address address = center.getAddress();
         String addressText = String.format("%s, %s, %s, %s",
@@ -79,6 +80,7 @@ public class CenterDetailActivity extends AppCompatActivity implements OnSuccess
         mailTextView.setText(center.getEmail());
         websiteTextView.setText(center.getWebsite());
         acceptedItemsTextView.setText(center.getAcceptedItemsDetails());
+        Log.d(TAG,"Phone number is "+center.getPhoneNumber());
 
         FirebaseUtility u = new FirebaseUtility(getApplicationContext());
         u.getURi(center.getImageUrl(), this);
