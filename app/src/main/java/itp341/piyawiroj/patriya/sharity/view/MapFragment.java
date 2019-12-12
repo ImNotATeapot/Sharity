@@ -1,8 +1,12 @@
 package itp341.piyawiroj.patriya.sharity.view;
 
 import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +14,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -28,6 +33,7 @@ import java.util.List;
 import java.util.Locale;
 
 import itp341.piyawiroj.patriya.sharity.R;
+import itp341.piyawiroj.patriya.sharity.controller.ChooseDonationsActivity;
 import itp341.piyawiroj.patriya.sharity.models.DonationCenter;
 import itp341.piyawiroj.patriya.sharity.models.DonationCentersSingleton;
 
@@ -72,10 +78,24 @@ public class MapFragment extends Fragment {
                     MarkerOptions marker = new MarkerOptions().position(latLng).title(center.getName()).snippet(addressString);
                     googleMap.addMarker(marker);
                     // For zooming automatically to the location of the marker
-                    if (latLng != null) {
-                        CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(60).build();
-                        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                    }
+//                    if (latLng != null) {
+//                        CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(60).build();
+//                        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+//                    }
+                }
+
+                if (ContextCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    //request permissions
+                    String[] permissionsList = new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION};
+                    requestPermissions(permissionsList, 0);
+                } else {
+                    LocationManager lm = (LocationManager) getActivity().getSystemService(getContext().LOCATION_SERVICE);
+                    Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    double longitude = location.getLongitude();
+                    double latitude = location.getLatitude();
+                    LatLng latLng = new LatLng(latitude, longitude);
+                    CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(60).build();
+                    googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 }
             }
         });

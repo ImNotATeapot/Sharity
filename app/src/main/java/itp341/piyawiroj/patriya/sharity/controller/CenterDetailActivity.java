@@ -1,13 +1,18 @@
 package itp341.piyawiroj.patriya.sharity.controller;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import itp341.piyawiroj.patriya.sharity.R;
 import itp341.piyawiroj.patriya.sharity.util.FirebaseUtility;
@@ -17,7 +22,7 @@ import itp341.piyawiroj.patriya.sharity.models.DonationCentersSingleton;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-public class CenterDetailActivity extends AppCompatActivity implements OnSuccessListener<Uri> {
+public class CenterDetailActivity extends AppCompatActivity implements OnSuccessListener<Uri>, View.OnClickListener {
 
     private static final String TAG = CenterDetailActivity.class.getSimpleName();
     public TextView title;
@@ -34,6 +39,7 @@ public class CenterDetailActivity extends AppCompatActivity implements OnSuccess
     private TextView acceptedItemsTextView;
     private ImageView imageview;
     private String imgurl;
+    private String number = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +75,24 @@ public class CenterDetailActivity extends AppCompatActivity implements OnSuccess
         descriptionTextView.setText(center.getDescription());
         notesTextView.setText(center.getNotice());
         phoneTextView.setText(center.getPhoneNumber());
+        number = center.getPhoneNumber();
         mailTextView.setText(center.getEmail());
         websiteTextView.setText(center.getWebsite());
         acceptedItemsTextView.setText(center.getAcceptedItemsDetails());
 
         FirebaseUtility u = new FirebaseUtility(getApplicationContext());
         u.getURi(center.getImageUrl(), this);
+
+        phoneTextView.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if ( ContextCompat.checkSelfPermission( getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+            String dial = "tel:" + number;
+            startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
+        }
     }
 
     @Override

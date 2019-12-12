@@ -99,10 +99,6 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(i);
 
-//                if ( ContextCompat.checkSelfPermission( getApplicationContext(), android.Manifest.permission.ACTION_DIAL) != PackageManager.PERMISSION_GRANTED ) {
-//                    String dial = "tel:" + "7742903400";
-//                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
-//                }
             }
         });
 
