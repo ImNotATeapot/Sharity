@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.find_center;
+package itp341.piyawiroj.patriya.sharity.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 
 import itp341.piyawiroj.patriya.sharity.R;
+import itp341.piyawiroj.patriya.sharity.controller.CenterListAdapter;
 import itp341.piyawiroj.patriya.sharity.models.DonationCenter;
 import itp341.piyawiroj.patriya.sharity.models.DonationCentersSingleton;
 

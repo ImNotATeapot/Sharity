@@ -1,10 +1,8 @@
-package itp341.piyawiroj.patriya.sharity.main;
+package itp341.piyawiroj.patriya.sharity.util;
 
 import android.content.Context;
 import android.location.Address;
 import android.net.Uri;
-import android.renderscript.Sampler;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -25,13 +23,13 @@ import itp341.piyawiroj.patriya.sharity.models.BusinessHour;
 import itp341.piyawiroj.patriya.sharity.models.DonationCenter;
 import itp341.piyawiroj.patriya.sharity.models.DonationCentersSingleton;
 
-public class Utility {
-    private static final String TAG = Utility.class.getSimpleName();
+public class FirebaseUtility {
+    private static final String TAG = FirebaseUtility.class.getSimpleName();
     private Context context;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference dbRef = database.getReference();
 
-    public Utility(Context context) {
+    public FirebaseUtility(Context context) {
         this.context = context;
     }
 

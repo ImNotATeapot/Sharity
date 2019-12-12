@@ -1,4 +1,4 @@
-package itp341.piyawiroj.patriya.sharity.choose_donations;
+package itp341.piyawiroj.patriya.sharity.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import itp341.piyawiroj.patriya.sharity.R;
-import itp341.piyawiroj.patriya.sharity.find_center.FindCenterActivity;
+import itp341.piyawiroj.patriya.sharity.controller.FindCenterActivity;
 
 public class CategoriesFragment extends Fragment {
 

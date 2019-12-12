@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="@dimen/table_spacing">
+            android:layout_marginBottom="8dp">
 
             <Button
                 android:id="@+id/push_button1"
@@ -46,7 +46,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="18dp"
                 android:background="@drawable/round_button"
-                android:tag="1"/>
+                android:tag="1" />
 
             <Button
                 android:id="@+id/push_button3"
@@ -56,7 +56,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="18dp"
                 android:background="@drawable/round_button"
-                android:tag="2"/>
+                android:tag="2" />
         </TableRow>
 
         <TableRow
@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="@dimen/table_spacing">
+            android:layout_marginBottom="8dp">
 
             <Button
                 android:id="@+id/push_button4"
@@ -108,7 +108,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="18dp"
                 android:background="@drawable/round_button"
-                android:tag="3"/>
+                android:tag="3" />
 
             <Button
                 android:id="@+id/push_button5"
@@ -118,7 +118,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="18dp"
                 android:background="@drawable/round_button"
-                android:tag="4"/>
+                android:tag="4" />
 
             <Button
                 android:id="@+id/push_button6"
@@ -128,7 +128,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="18dp"
                 android:background="@drawable/round_button"
-                android:tag="5"/>
+                android:tag="5" />
         </TableRow>
 
         <TableRow
@@ -170,7 +170,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="@dimen/table_spacing">
+            android:layout_marginBottom="8dp">
 
             <Button
                 android:id="@+id/push_button7"
@@ -180,7 +180,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="18dp"
                 android:background="@drawable/round_button"
-                android:tag="6"/>
+                android:tag="6" />
 
             <Button
                 android:id="@+id/push_button8"
@@ -190,7 +190,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="18dp"
                 android:background="@drawable/round_button"
-                android:tag="7"/>
+                android:tag="7" />
         </TableRow>
 
         <TableRow

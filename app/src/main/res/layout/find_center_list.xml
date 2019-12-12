@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
-        android:text="TextView" />
+        android:text="Centers near you" />
 
     <ListView
         android:id="@+id/center_list"

@@ -11,12 +11,12 @@
     <dimen name="small_font_size">12sp</dimen>
     <dimen name="search_bar_height">44dp</dimen>
     <dimen name="nav_bar_height">112dip</dimen>
-    <dimen name="push_button_height">64dp</dimen>
-    <dimen name="push_button_width">64dp</dimen>
+    <dimen name="push_button_height">32pt</dimen>
+    <dimen name="push_button_width">32pt</dimen>
     <dimen name="pin_height">18dp</dimen>
     <dimen name="pin_width">24dp</dimen>
     <dimen name="icon_size">24dp</dimen>
     <dimen name="searchBar_width">320dp</dimen>
-    <dimen name="table_spacing">4dp</dimen>
+    <dimen name="table_spacing">16pt</dimen>
     <dimen name="categories_button_size">100dp</dimen>
 </resources>
